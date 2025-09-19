@@ -1,5 +1,6 @@
 #pragma once
 #include <stack>
+#include <string>
 /**
 * @brief Evaluates a mathematical expression in Reverse Polish Notation (RPN).
 *

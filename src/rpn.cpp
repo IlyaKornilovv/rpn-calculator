@@ -154,67 +154,17 @@ double evaluate_rpn(const std::string& expression) {
 					std::cout << stack.top() << " ";
 				}
 				std::cout << std::endl;
-			} else if (token == "pi") { //Число пи
-				result = M_PI;
-			} else if (token == "e") { //Число Эйлера
-				result = M_E;
-			} else if (token == "rand") { //Случайное число от 0 до 1
-				srand(time(NULL));
-				result = rand() / double(RAND_MAX);
-			} else
+			} 
 			//Один операнд
-        	if (token == "~") { //Унарный минус
-                result = -a;
-            } else if (token == "++") { //Инкремент
-                result = ++a;
-            } else if (token == "--") { //Декремент
-                result = --a;
-            } else if (token == "!") { //Факториал
-                if (a < 0.0) {
-                    throw std::invalid_argument("Factorial of zero");
-                }
-                for (result = 1; a > 0; --a) {
-                    result *= a;
-                }
-            } else if (token == "sqrt") { //Квадратный корень
+        	  else if (token == "sqrt") { //Квадратный корень
 				result = sqrt(a);
-			} else if (token == "abs") { //Модуль
-				result = abs(a);
 			} else if (token == "sin") { //Синус
 				result = sin(a);
 			} else if (token == "cos") { //Косинус
 				result = cos(a);
 			} else if (token == "tan") { //Тангенс
 				result = tan(a);
-			} else if (token == "asin") { //Арксинус
-				if (abs(a) > 1){
-					throw std::invalid_argument("There is no arcsinus");
-				}
-				result = asin(a);
-			} else if (token == "acos") { //Арккосинус
-				if (abs(a) > 1){
-					throw std::invalid_argument("There is no arccosine");
-				}
-				result = acos(a);
-			} else if (token == "atan") { //Арктангенс
-				result = atan(a);
-			} else if (token == "ln") { //Натуральный логарифм
-				if (a <= 0){
-					throw std::invalid_argument("There is no logarithm");
-				}
-				result = log(a);
-			} else if (token == "lg") { //Десятичный логарифм
-				if (a <= 0){
-					throw std::invalid_argument("There is no logarithm");
-				}
-				result = log10(a);
-			} else if (token == "floor") { //Округление вниз
-				result = floor(a);
-			} else if (token == "ceil") { //Округление вверх
-				result = ceil(a);
-			} else if (token == "round") { //Округление по математическим правилам
-				result = round(a);
-			} else
+			} 
 			//Два операнда
 			if (token == "+") { //Сложение
                 result = a + b;
